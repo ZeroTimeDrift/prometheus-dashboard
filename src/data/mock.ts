@@ -1,9 +1,10 @@
 export const WALLET_ADDRESS = '7u5ovFNms7oE232TTyMU5TxDfyZTJctihH4YqP2n1EUz';
 
 export const portfolioStats = {
-  totalValue: 167.26,
+  totalValue: 2.17,
+  totalValueUsd: 167.26,
   currentAPY: 5.8,
-  activeStrategy: 'Diversified: Yield + LSTs + DeFi Index + Culture',
+  activeStrategy: 'Diversified: Yield + LSTs + DeFi Index',
   totalTransactions: 42,
   successfulTransactions: 40,
   daysActive: 10,
@@ -42,16 +43,16 @@ export const oodaSteps = [
 ];
 
 export const performanceData = [
-  { date: 'Feb 3', value: 200.00, label: 'Initial 2 SOL deposit' },
-  { date: 'Feb 4', value: 199.21, label: 'Multiply position opened' },
-  { date: 'Feb 5', value: 198.64, label: '' },
-  { date: 'Feb 6', value: 197.90, label: '' },
-  { date: 'Feb 7', value: 198.35, label: 'Yield accrual' },
-  { date: 'Feb 8', value: 198.72, label: '' },
-  { date: 'Feb 9', value: 199.10, label: '' },
-  { date: 'Feb 10', value: 199.48, label: 'Flash loan bug hit' },
-  { date: 'Feb 11', value: 199.15, label: '' },
-  { date: 'Feb 12', value: 167.26, label: 'Unwound + diversified (SOL dropped to $77)' },
+  { date: 'Feb 3', value: 2.00, label: 'Initial 2 SOL deposit' },
+  { date: 'Feb 4', value: 2.00, label: 'Multiply position opened' },
+  { date: 'Feb 5', value: 2.01, label: 'Yield accrual' },
+  { date: 'Feb 6', value: 2.01, label: '' },
+  { date: 'Feb 7', value: 2.02, label: '' },
+  { date: 'Feb 8', value: 2.03, label: 'Staking yield' },
+  { date: 'Feb 9', value: 2.04, label: '' },
+  { date: 'Feb 10', value: 2.04, label: 'Flash loan bug hit' },
+  { date: 'Feb 11', value: 2.05, label: '' },
+  { date: 'Feb 12', value: 2.17, label: 'Unwound + diversified across 7 protocols' },
 ];
 
 export const decisions = [

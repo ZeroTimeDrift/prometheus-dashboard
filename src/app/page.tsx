@@ -1,7 +1,9 @@
 import HeroHeader from '@/components/HeroHeader';
 import PortfolioCards from '@/components/PortfolioCards';
+import PortfolioHoldings from '@/components/PortfolioHoldings';
 import OODALoop from '@/components/OODALoop';
 import PerformanceChart from '@/components/PerformanceChart';
+import CaseStudy from '@/components/CaseStudy';
 import DecisionsLog from '@/components/DecisionsLog';
 import ProtocolRates from '@/components/ProtocolRates';
 import RiskParameters from '@/components/RiskParameters';
@@ -17,11 +19,19 @@ export default function Home() {
         {/* Divider */}
         <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
         
-        <OODALoop />
+        <PortfolioHoldings />
         
         <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
         
         <PerformanceChart />
+        
+        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
+        
+        <CaseStudy />
+        
+        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
+        
+        <OODALoop />
         
         <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
         

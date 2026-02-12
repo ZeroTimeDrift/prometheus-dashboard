@@ -24,7 +24,7 @@ function CustomTooltip({ active, payload, label }: TooltipProps) {
       <div className="bg-bg-card border border-gray-700/50 rounded-lg px-4 py-3 shadow-xl">
         <p className="text-xs text-gray-500 font-sans mb-1">{label}</p>
         <p className="font-mono text-lg font-bold text-gray-100">
-          ${payload[0].value.toFixed(2)}
+          ◎ {payload[0].value.toFixed(2)} SOL
         </p>
         {payload[0].payload.label && (
           <p className="text-xs text-cyan-glow/80 mt-1">{payload[0].payload.label}</p>
@@ -52,14 +52,14 @@ export default function PerformanceChart() {
               Portfolio Performance
             </h2>
             <p className="text-sm text-gray-500 mt-1">
-              Value over time (SOL denominated → USD)
+              SOL-denominated · started with ◎ 2.00
             </p>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono text-gray-500">10d</span>
             <div className="w-px h-3 bg-gray-700" />
-            <span className="font-mono text-sm text-gray-300">
-              ${performanceData[performanceData.length - 1].value.toFixed(2)}
+            <span className="font-mono text-sm text-emerald-400">
+              ◎ {performanceData[performanceData.length - 1].value.toFixed(2)} (+{((performanceData[performanceData.length - 1].value / 2.0 - 1) * 100).toFixed(1)}%)
             </span>
           </div>
         </div>
@@ -86,13 +86,13 @@ export default function PerformanceChart() {
                 axisLine={false}
               />
               <YAxis
-                domain={[196, 202]}
+                domain={[1.95, 2.25]}
                 stroke="rgba(107, 114, 128, 0.3)"
                 tick={{ fill: '#6b7280', fontSize: 12, fontFamily: 'JetBrains Mono, monospace' }}
                 tickLine={false}
                 axisLine={false}
-                tickFormatter={(value: number) => `$${value}`}
-                width={50}
+                tickFormatter={(value: number) => `◎${value.toFixed(2)}`}
+                width={55}
               />
               <Tooltip content={<CustomTooltip />} />
               <Area

@@ -6,22 +6,22 @@ import { portfolioStats } from '@/data/mock';
 const cards = [
   {
     label: 'Total Value',
-    value: `$${portfolioStats.totalValue.toFixed(2)}`,
-    subtext: `${portfolioStats.solBalance} SOL reserve`,
+    value: `◎ ${portfolioStats.totalValue.toFixed(2)}`,
+    subtext: `~$${(portfolioStats.totalValue * 77.10).toFixed(0)} USD`,
     accent: 'cyan',
     large: true,
   },
   {
-    label: 'Current APY',
+    label: 'Blended APY',
     value: `${portfolioStats.currentAPY}%`,
-    subtext: 'pSOL/SOL Multiply',
+    subtext: 'Weighted across positions',
     accent: 'amber',
     large: false,
   },
   {
     label: 'Active Strategy',
     value: portfolioStats.activeStrategy,
-    subtext: 'Kamino Multiply',
+    subtext: '7 protocols · 10+ assets',
     accent: 'cyan',
     large: false,
   },
@@ -35,7 +35,7 @@ const cards = [
   {
     label: 'Days Active',
     value: `${portfolioStats.daysActive}`,
-    subtext: 'Since Feb 2, 2025',
+    subtext: 'Since Feb 3, 2026',
     accent: 'cyan',
     large: false,
   },
