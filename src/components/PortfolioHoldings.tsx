@@ -80,7 +80,7 @@ export default function PortfolioHoldings() {
         </span>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Allocation bar */}
         <div className="lg:col-span-1">
           <div className="rounded-xl bg-bg-card border border-gray-800/50 p-5">
@@ -144,12 +144,11 @@ export default function PortfolioHoldings() {
             className="rounded-xl bg-bg-card border border-gray-800/50 overflow-hidden"
           >
             {/* Header */}
-            <div className="grid grid-cols-12 gap-2 px-5 py-3 border-b border-gray-800/30 text-xs uppercase tracking-wider text-gray-500 font-sans">
-              <div className="col-span-3">Token</div>
-              <div className="col-span-3 text-right">Amount</div>
-              <div className="col-span-2 text-right">USD</div>
-              <div className="col-span-2 text-right">SOL eq.</div>
-              <div className="col-span-2 text-right">APY</div>
+            <div className="grid grid-cols-3 sm:grid-cols-12 gap-2 px-4 sm:px-5 py-3 border-b border-gray-800/30 text-xs uppercase tracking-wider text-gray-500 font-sans">
+              <div className="sm:col-span-4">Token</div>
+              <div className="text-right sm:col-span-3">Value</div>
+              <div className="text-right sm:col-span-3 hidden sm:block">SOL eq.</div>
+              <div className="text-right sm:col-span-2">APY</div>
             </div>
 
             {/* Rows */}
@@ -157,11 +156,11 @@ export default function PortfolioHoldings() {
               <motion.div
                 key={`${h.token}-${h.location}-${i}`}
                 variants={item}
-                className={`grid grid-cols-12 gap-2 px-5 py-2.5 text-sm border-b border-gray-800/20
+                className={`grid grid-cols-3 sm:grid-cols-12 gap-2 px-4 sm:px-5 py-2.5 text-sm border-b border-gray-800/20
                   ${h.valueUsd < 0 ? 'bg-red-500/5' : 'hover:bg-bg-hover/50'}
                   transition-colors`}
               >
-                <div className="col-span-3 flex items-center gap-2">
+                <div className="sm:col-span-4 flex items-center gap-2">
                   <span className={`text-xs px-1.5 py-0.5 rounded font-mono ${
                     h.category === 'yield' ? 'bg-green-500/10 text-green-400' :
                     h.category === 'stable' ? 'bg-blue-500/10 text-blue-400' :
@@ -176,16 +175,13 @@ export default function PortfolioHoldings() {
                     {h.location}
                   </span>
                 </div>
-                <div className="col-span-3 text-right font-mono text-gray-300">
-                  {h.amount < 0 ? '' : ''}{Math.abs(h.amount) > 1000 ? Math.abs(h.amount).toLocaleString('en', { maximumFractionDigits: 0 }) : Math.abs(h.amount).toFixed(4)}
-                </div>
-                <div className={`col-span-2 text-right font-mono ${h.valueUsd < 0 ? 'text-red-400' : 'text-gray-300'}`}>
+                <div className={`text-right sm:col-span-3 font-mono ${h.valueUsd < 0 ? 'text-red-400' : 'text-gray-300'}`}>
                   {h.valueUsd < 0 ? '-' : ''}${Math.abs(h.valueUsd).toFixed(2)}
                 </div>
-                <div className="col-span-2 text-right font-mono text-gray-500">
+                <div className="text-right sm:col-span-3 font-mono text-gray-500 hidden sm:block">
                   ◎{(Math.abs(h.valueUsd) / SOL_PRICE).toFixed(4)}
                 </div>
-                <div className="col-span-2 text-right font-mono">
+                <div className="text-right sm:col-span-2 font-mono">
                   {h.apy ? (
                     <span className="text-green-400">{h.apy}%</span>
                   ) : h.valueUsd < 0 ? (
@@ -198,16 +194,15 @@ export default function PortfolioHoldings() {
             ))}
 
             {/* Total row */}
-            <div className="grid grid-cols-12 gap-2 px-5 py-3 bg-bg-hover/30 text-sm font-medium">
-              <div className="col-span-3 text-gray-400 font-sans">Total</div>
-              <div className="col-span-3" />
-              <div className="col-span-2 text-right font-mono text-gray-100 font-bold">
+            <div className="grid grid-cols-3 sm:grid-cols-12 gap-2 px-4 sm:px-5 py-3 bg-bg-hover/30 text-sm font-medium">
+              <div className="sm:col-span-4 text-gray-400 font-sans">Total</div>
+              <div className="text-right sm:col-span-3 font-mono text-gray-100 font-bold">
                 ${totalValue.toFixed(2)}
               </div>
-              <div className="col-span-2 text-right font-mono text-gray-300 font-bold">
+              <div className="text-right sm:col-span-3 font-mono text-gray-300 font-bold hidden sm:block">
                 ◎{(totalValue / SOL_PRICE).toFixed(4)}
               </div>
-              <div className="col-span-2" />
+              <div className="sm:col-span-2" />
             </div>
           </motion.div>
         </div>

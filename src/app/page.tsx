@@ -1,50 +1,53 @@
 import HeroHeader from '@/components/HeroHeader';
-import PortfolioCards from '@/components/PortfolioCards';
-import PortfolioHoldings from '@/components/PortfolioHoldings';
-import OODALoop from '@/components/OODALoop';
-import PerformanceChart from '@/components/PerformanceChart';
-import CaseStudy from '@/components/CaseStudy';
-import DecisionsLog from '@/components/DecisionsLog';
-import ProtocolRates from '@/components/ProtocolRates';
-import RiskParameters from '@/components/RiskParameters';
+import StatsBar from '@/components/StatsBar';
+import VsComparison from '@/components/VsComparison';
+import LivePortfolio from '@/components/LivePortfolio';
+import AgentLog from '@/components/AgentLog';
+import FlashLoanStory from '@/components/FlashLoanStory';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-bg-primary relative scanline grid-bg">
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10">
         <HeroHeader />
-        <PortfolioCards />
-        
-        {/* Divider */}
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
-        
-        <PortfolioHoldings />
-        
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
-        
-        <PerformanceChart />
-        
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
-        
-        <CaseStudy />
-        
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
-        
-        <OODALoop />
-        
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
-        
-        <DecisionsLog />
-        
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
-        
-        {/* Two column layout for rates + risk */}
-        <div className="lg:grid lg:grid-cols-2">
-          <ProtocolRates />
-          <RiskParameters />
+
+        <div className="max-w-6xl mx-auto">
+          <StatsBar />
         </div>
-        
+
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <VsComparison />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <LivePortfolio />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <FlashLoanStory />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-800/50 to-transparent" />
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <AgentLog />
+        </div>
+
         <Footer />
       </div>
     </main>

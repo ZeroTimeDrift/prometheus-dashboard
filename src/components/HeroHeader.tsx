@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { WALLET_ADDRESS } from '@/data/mock';
+import HeroAnimation from './HeroAnimation';
 
 export default function HeroHeader() {
   const shortAddress = `${WALLET_ADDRESS.slice(0, 4)}...${WALLET_ADDRESS.slice(-4)}`;
@@ -16,20 +17,21 @@ export default function HeroHeader() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-glow/5 to-transparent pointer-events-none" />
       
-      <div className="relative px-6 py-12 md:py-16 text-center">
+      <div className="relative px-6 py-8 md:py-10 text-center">
         {/* Logo / Title */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="font-mono text-4xl md:text-6xl font-bold tracking-wider mb-3">
+          <h1 className="font-mono text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-wider mb-3">
             <span className="gradient-text">PROMETHEUS</span>
-            <span className="text-gray-400 ml-3">VAULT</span>
+            <br className="sm:hidden" />
+            <span className="text-gray-400 sm:ml-3">VAULT</span>
           </h1>
           
-          <p className="text-gray-500 text-sm md:text-base font-sans tracking-wide mb-6">
-            Autonomous DeFi Yield Optimizer on Solana
+          <p className="text-gray-400 text-base md:text-xl font-sans tracking-wide mb-6">
+            The agentic DeFi layer for Solana
           </p>
         </motion.div>
 
@@ -67,6 +69,9 @@ export default function HeroHeader() {
             </svg>
           </a>
         </motion.div>
+
+        {/* Animated protocol constellation */}
+        <HeroAnimation />
       </div>
 
       {/* Bottom border line */}

@@ -1,14 +1,14 @@
 export const WALLET_ADDRESS = '7u5ovFNms7oE232TTyMU5TxDfyZTJctihH4YqP2n1EUz';
 
 export const portfolioStats = {
-  totalValue: 2.17,
-  totalValueUsd: 167.26,
+  totalValue: 2.00,
+  totalValueUsd: 160.00,
   currentAPY: 5.8,
   activeStrategy: 'Diversified: Yield + LSTs + DeFi Index',
   totalTransactions: 42,
   successfulTransactions: 40,
   daysActive: 10,
-  solBalance: 0.51,
+  solBalance: 0.27,
 };
 
 export const oodaSteps = [
@@ -52,10 +52,60 @@ export const performanceData = [
   { date: 'Feb 9', value: 2.04, label: '' },
   { date: 'Feb 10', value: 2.04, label: 'Flash loan bug hit' },
   { date: 'Feb 11', value: 2.05, label: '' },
-  { date: 'Feb 12', value: 2.17, label: 'Unwound + diversified across 7 protocols' },
+  { date: 'Feb 12', value: 2.05, label: 'Unwound + diversified across 7 protocols' },
+  { date: 'Feb 13', value: 2.00, label: 'Multiply + alts + LSTs — flat vs SOL' },
 ];
 
 export const decisions = [
+  {
+    time: 'Feb 13, 12:00',
+    action: 'OODA Cycle — HOLD',
+    reasoning: 'Portfolio $123.33 (1.55 SOL). Multiply pSOL/SOL 1.06x at 7.37% gross — best option. SOL-JitoSOL LP near boundary (0.09%). Idle 0.24 JitoSOL deploy to multiply failed again (JUP sim: read-only account balance). Cross-protocol: raydium 191%, orca 82%, wasabi 15% — not yet enabled. KLend net $77.59 (1.06x leverage). SOL @ $79.77. All positions stable. Memo logged on-chain.',
+    status: 'success' as const,
+    txHash: '2XBBy2Uq7bYMuZvaRbMJNpf2mCJqSK2pAUn14pQub8GoQ12gagUFbq2hySta4FF4UsZHeqZGpgCdzJKrWZtC63yx',
+  },
+  {
+    time: 'Feb 13, 10:07',
+    action: 'OODA Cycle — HOLD',
+    reasoning: 'Portfolio $122.24 (1.55 SOL). Multiply pSOL/SOL 1.06x at 7.01% — best option. SOL-JitoSOL LP near boundary (0.09%). Idle 0.24 JitoSOL deploy to multiply failed (JUP sim: read-only account). Cross-protocol: raydium 204%, orca 81%, wasabi 15% — not yet enabled. All positions stable. Memo logged on-chain.',
+    status: 'success' as const,
+    txHash: '4ojnm47wL2b4CwVorC9H4iKRBh1s3biLko6ht96pmvLXCDdoYztKriZMzSaA7h1H7wFwoaX6wVv8N2DYoubRdBFH',
+  },
+  {
+    time: 'Feb 13, 08:00',
+    action: 'OODA Cycle — HOLD',
+    reasoning: 'Portfolio $121.24 (1.55 SOL). Multiply pSOL/SOL 1.07x at 7.02% — best option. SOL-JitoSOL LP 0.08% from boundary — in range. Idle 0.24 JitoSOL deploy to multiply rate-limited (429). Cross-protocol: orca 83%, raydium 78% — not yet enabled. All positions stable. Memo logged on-chain.',
+    status: 'success' as const,
+    txHash: '4kLgqRhgBSdYnaYby1q1UL5umz78GFn4z41tJ2W5m4fPEcZfEj1eTLk5SC5deWKpzsrATPtH5gauFPwSLz86ppfD',
+  },
+  {
+    time: 'Feb 13, 06:01',
+    action: 'OODA Cycle — HOLD',
+    reasoning: 'Portfolio $122.15 (1.55 SOL). Multiply pSOL/SOL 1.07x at 7.02% — best option. SOL-JitoSOL LP 0.08% from boundary — in range. Idle 0.24 JitoSOL deploy to multiply failed (JUP sim: read-only account balance change). Cross-protocol: raydium 224%, orca 83% — not yet enabled. All positions stable. Memo logged on-chain.',
+    status: 'success' as const,
+    txHash: '54NNDdwnAfJLewZfeyJ5QY3DYrxvAx1EqudfKFV6yPHcdMR6Dh5qNvxDdSFf2TXvnTGdZBcFzdd4Xg5RT9agCDei',
+  },
+  {
+    time: 'Feb 13, 04:07',
+    action: 'OODA Cycle — HOLD',
+    reasoning: 'Portfolio $121.61 (1.55 SOL). SOL-JitoSOL LP 0.08% from boundary — in range. KLend multiply 1.07x at 7.02%. Idle deploy attempt failed (JUP sim: read-only account). Cross-protocol: raydium 232%, orca 83% — not yet enabled. All positions stable. Memo logged on-chain.',
+    status: 'success' as const,
+    txHash: '2p94Zpsaz1AEESqrYbQTXuWDZmGHXQtbhMUUWziq5h8a7ZwSpLvzsdac1P8e3AS3GsroShu4oxNeRbn3P5Agim2f',
+  },
+  {
+    time: 'Feb 13, 02:00',
+    action: 'OODA Cycle — HOLD + Idle Deploy Attempted',
+    reasoning: 'Portfolio $121.17 (1.55 SOL). Multiply pSOL/SOL at 7.02% — best option. Idle 0.24 JitoSOL deploy to multiply failed (Jupiter sim error: read-only account balance). SOL-JitoSOL LP 0.08% from boundary. Cross-protocol scan: raydium 235%, orca 85% — not yet enabled. Hold current. Next cycle 2h.',
+    status: 'success' as const,
+    txHash: '5XU4nQELHbSVPTfXzkybwZi4L4mMfwkuCWQH4M2u7NeZ4RwQpihewdEkobsUXjaK5W8dboPaJ26QzQntPAR3YyXa',
+  },
+  {
+    time: 'Feb 13, 02:28',
+    action: 'OODA Cycle — HOLD',
+    reasoning: 'Portfolio 0.573 SOL ($44.22). SOL-JitoSOL LP at 0.08% from boundary — monitoring. KLend positions stable. Rebalancer timed out on Kamino API — no action needed. All positions within risk parameters. Next cycle 2h.',
+    status: 'success' as const,
+    txHash: '3WtM4XFPBRuuD99pAsFYCv65ZSnU2xYNW6yfjoAj7D5W6N4rmaWfUJa4b6hsqQz6CQqAZAKfLYGyMNvfcttYwhNZ',
+  },
   {
     time: 'Feb 12, 21:30',
     action: 'Built Solana DeFi Index — 5 swaps',
